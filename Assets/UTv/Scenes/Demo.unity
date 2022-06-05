@@ -273,6 +273,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 143668, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
   m_PrefabInstance: {fileID: 2015539354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &286866519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286866517}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb743c666c1ab34e928a0b62c2fa862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeState: {fileID: 0}
+  _interactableFilters: []
+  MaxIterationsPerFrame: 3
+  _selector: {fileID: 0}
+  _rigidbody: {fileID: 630727624}
+  _grabCenter: {fileID: 0}
+  _grabTarget: {fileID: 0}
+  _velocityCalculator: {fileID: 0}
 --- !u!1 &504827890
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553554867}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.326, y: 0, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -527,6 +547,7 @@ GameObject:
   - component: {fileID: 630727625}
   - component: {fileID: 630727624}
   - component: {fileID: 630727626}
+  - component: {fileID: 630727627}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -604,6 +625,27 @@ MonoBehaviour:
   _firePos: {fileID: 553554867}
   _shellPrefab: {fileID: 5906567601054700146, guid: fd7282f043b30b040b435024fce351fd, type: 3}
   _power: 20
+--- !u!114 &630727627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 630727624}
+  _grabSource: {fileID: 0}
+  _useClosestPointAsGrabSource: 0
+  _releaseDistance: 0
+  _resetGrabOnGrabsUpdated: 1
+  _physicsGrabbable: {fileID: 0}
 --- !u!1 &689371912
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +907,7 @@ Transform:
   m_GameObject: {fileID: 1011430394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.6, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1487643047}
@@ -1302,7 +1344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343505021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.243, y: -0.162, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2083,6 +2125,10 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 989307771}
+    - target: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
 --- !u!1 &2021399324
@@ -2111,14 +2157,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021399324}
-  m_LocalRotation: {x: -0, y: -0, z: -0.5463959, w: 0.8375271}
-  m_LocalPosition: {x: 0.2311, y: -0.1217, z: 0}
-  m_LocalScale: {x: 0.25848058, y: 0.16445525, z: 0.1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: 0.25, y: -0.1, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.15, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1487643047}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -66.24}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
 --- !u!65 &2021399326
 BoxCollider:
   m_ObjectHideFlags: 0
